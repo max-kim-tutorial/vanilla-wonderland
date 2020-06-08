@@ -6,7 +6,7 @@
 
 1. [아날로그 타이머](https://github.com/max-kim-tutorial/vanilla-wonderland/tree/master/001_timer) 
 2. [니콜라스 영화 앱](https://github.com/max-kim-tutorial/vanilla-wonderland/tree/master/002_movieApp) 
-3. [무한 이미지 슬라이더](https://im-developer.tistory.com/97) - [코드출처 : 제이JY님의 블로그, Code Playground](https://im-developer.tistory.com/97)
+3. [무한 이미지 슬라이더](https://im-developer.tistory.com/97) - 코드출처 :[제이JY님의 블로그, Code Playground](https://im-developer.tistory.com/97)
 
 ## DOM API
 
@@ -29,8 +29,10 @@ API = DOM + JS
 모르는거, 정리하고싶은거 나올때 마다 정리하기
 
 - window: document를 포함하는 창, 가장 상위에 위치한 노드, 
+- Node : 여러가지 dom 타입들이 상속하는 인터페이스, 그 다양한 타입들을 비슷하게 처리할 수 있게 함
 - document : 브라우저가 불러온 웹페이지, 페이지 콘텐츠/돔트리의 **진입점** 역할을 수행
 - element : Document 안의 모든 객체가 상속하는 제일 범용적인 기반 클래스, 공통 메서드와 속성만 가지고 있음, 속성값에 접근할 수 있음
+- document와 element는 Node로부터 메소드와 프로퍼티를 상속한다!
 
 |                이름                | 객체/역할                                                                                               |
 |:----------------------------------:|---------------------------------------------------------------------------------------------------------|
@@ -44,9 +46,9 @@ API = DOM + JS
 |      appendChild/removeChild       | Node/한 노드를 특정 부모 노드의 자식 노드 리스트중 가장 마지막에 붙이거나 찾아 삭제                     |
 |             matchMedia             | window/주어진 미디어 쿼리 **문자열**의 분석 결과를 나타내는 MediaQueryList객체반환(matches로 타진 가능) |
 |             addListner             | mediaQueryList.addListner(callback)/mql상태 변화시마다 호출되는 콜백                                    |
-| firstElementChild/lastElementChild | mediaQueryList.addListner(callback)/mql상태 변화시마다 호출되는 콜백                                    |
-|             cloneNode              | mediaQueryList.addListner(callback)/mql상태 변화시마다 호출되는 콜백                                    |
-|            insertBefore            | mediaQueryList.addListner(callback)/mql상태 변화시마다 호출되는 콜백                                    |
+| firstElementChild/lastElementChild | ParentNode/parent 노드에 속한 가장 첫 자식과 가장 마지막 자식 element를 리턴                            |
+|             cloneNode              | Node/복제된 노드를 반환                                                                                 |
+|            insertBefore            | Node/참조된 노드 앞에 특정 부모 노드의 자식노드 삽입                                                    |
 
 
 ## 발췌
@@ -84,13 +86,14 @@ function cardWidth(card, matching) {
 ### 2. 특정 조건에서 css조작으로 애니메이션 발생시키기
 
 - transform, transition
-- 이미지 슬라이더의 다음 버튼 이벤트 핸들러, 무한 이미지 슬라이더를 구현하기 위해 이미지 슬라이더의 모든 이미지 앞과 끝에 각각 이미지를 하나씩 더 붙였음.
+- 이미지 슬라이더의 다음 버튼 이벤트 핸들러
+- 무한 이미지 슬라이더를 구현하기 위해 이미지 슬라이더의 모든 이미지 앞과 끝에 각각 이미지를 하나씩 더 붙였음.
 
 ```js
   slideBtnNext.addEventListener("click", function () {
     // 정상적인 이동
     if (curIndex <= slideLen - 1) {
-      // transform이 발생하면 transition에 설정한 속도로 transition 발생, transform 넣어줘도 될듯
+      // transform이 발생하면 transition에 설정한 속도로 transition 발생, transform 0ms 이런식으로 넣어줘도 될듯
       slideList.style.transition = slideSpeed + "ms";
       // 슬라이더 이미지의 이동
       slideList.style.transform = "translate3d(-" + slideWidth * (curIndex + 2) + "px, 0px, 0px)";
