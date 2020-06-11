@@ -1,0 +1,46 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.list {
+  width: 300px;
+  margin: 0 auto;
+}
+.review-section {
+  margin-bottom: 20px;
+}
+
+.review-section > img {
+  width: 100%;
+}
+
+.review-content {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.review-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 15px 0;
+}
+
+.review-more {
+  margin: 10px 0px;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.explain {
+  text-align: center;
+  background-color: #ececec;
+  padding: 10px 0px;
+  margin-bottom: 10px;
+}
+
+.active {
+  white-space: pre-line !important;
+}

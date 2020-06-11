@@ -7,6 +7,7 @@
 1. [아날로그 타이머](https://github.com/max-kim-tutorial/vanilla-wonderland/tree/master/001_timer) 
 2. [니콜라스 영화 앱](https://github.com/max-kim-tutorial/vanilla-wonderland/tree/master/002_movieApp) 
 3. [무한 이미지 슬라이더](https://im-developer.tistory.com/97) - 코드출처 :[제이JY님의 블로그, Code Playground](https://im-developer.tistory.com/97)
+4. [리뷰 리스트](https://github.com/max-kim-tutorial/vanilla-wonderland/tree/master/004_reviewPage)
 
 ## DOM API
 
@@ -121,6 +122,18 @@ function cardWidth(card, matching) {
     curSlide.classList.add("slide_active");
     pageDots[curIndex].classList.add("dot_active");
   });
+```
+
+### 3. 요소의 절대위치 구하기
+
+뷰포트를 기준으로 최상단에서 특정 엘리멘트가 얼마나 떨어져있는지  
+이거 블로그에 따로 한번 정리해봐도 좋을듯
+```js
+ function moveScrollToTop(reviewSection) {
+    const distance = reviewSection.getBoundingClientRect().top;
+    const scrollLength = window.pageYOffset;
+    window.scrollTo(0, distance + scrollLength);
+  }
 ```
 
 ## clean code 측면에서 의문
