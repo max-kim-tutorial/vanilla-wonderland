@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>스크롤과 위치</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      .parent {
+        background-color: #ececec;
+        width: 200px;
+        height: 200px;
+        margin: 0 auto;
+        margin-top: 100px;
+        position: relative;
+      }
+
+      .child {
+        position: absolute;
+        top: 25%;
+        left: 25%;
+        background-color: green;
+        width: 100px;
+        height: 100px;
+      }
+
+      .scroll {
+        height: 1200px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parent">
+      <div class="child"></div>
+    </div>
+    <div class="scroll"></div>
+    <script src="./index.js"></script>
+  </body>
+</html>
