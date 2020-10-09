@@ -135,10 +135,3 @@ function cardWidth(card, matching) {
     window.scrollTo(0, distance + scrollLength);
   }
 ```
-
-## clean code 측면에서 의문
-
-- 비슷한 기능을 하는 함수를 분리할때 플래그 변수 사용해 다르게 만드는거 별로인가?
-- 추상화 수준 위에서 아래로 갈수록 낮아져야
-- 행위 위주로 묶지 말고 대상 위주로 묶기
-- 전역변수보다는 함수에 인자를 주는 방식으로 짜야 가독성이 높을 것 같음
