@@ -15,6 +15,7 @@
 - 이식성을 높이고, 변경에 유연하게 대체할 수 있다
 - 함수형 프로그래밍과 관련이 깊다 : 예기치 않은 부수효과 없이 **하나의 일을 잘 수행하는 함수** 그러한 함수를 조합/구성함으로써 큰 문제를 해결한다
 - 입출력을 뚜렷하게 구분할 수 있다 : 무엇을 넣었을때 무언가를 렌더링한다. state를 넣으면 그에 맞는 view를 렌더링한다
+- state = data + time
 
 **View=Function(state)**
 
@@ -44,10 +45,22 @@
 
 ## 튜토리얼
 
-자바스크립트로 웹 컴포넌트를 구현해볼 것이다
+바닐라 자바스크립트로 웹 컴포넌트를 구현해볼 것이다
 
-1. Functional Component: proxy 객체의 원리를 이용해 반응성을 구현한 간단한 함수형 컴포넌트
-2. Class Component: htmlElement 클래스를 extend해서 만든 customElement 클래스형 컴포넌트
+1. Functional Component: proxy 객체의 원리를 이용해 반응성을 구현한 간단한 함수형 컴포넌트 (+대충의 기능 구현)
+2. Class Component: htmlElement 클래스를 extend해서 만든 customElement 클래스형 컴포넌트 (맛보기)
+
+### 기능
+
+1. state 입력하면 뷰를 렌더링(ok)
+2. 반응성, state 변경되면 재랜더링(ok)
+3. 생명주기 + 렌더링 전 후의 비동기, 부수효과 작업(ok, 불완전함)
+4. 간단한 이벤트 핸들러(ok, 바닐라로 대충 불안정함)
+5. 컴포넌트 중첩(ok)
+
+## 앞으로 정리할 것
+
+- HTML 스크립트 태그 type 종류
 
 ## 보너스) Web Component W3C 표준
 
